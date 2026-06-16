@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <title>TechStore Online - Carrito</title>
+</head>
+<body>
+<header>
+  <img src="img/logo.svg" alt="Logo de TechStore Online" width="220" height="80">
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="producto.html">Detalle</a></li>
+      <li><a href="carrito.html">Carrito</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="acerca.html">Acerca de</a></li>
+    </ul>
+  </nav>
+  <form action="productos.html" method="get" aria-label="Busqueda de productos">
+    <label for="buscar">Buscar productos</label>
+    <input type="search" id="buscar" name="buscar" placeholder="Buscar">
+    <button type="submit">Buscar</button>
+  </form>
+</header>
+<main>
+  <h1>Carrito de Compras</h1>
+  <section>
+    <h2>Productos Agregados</h2>
+    <table>
+      <caption>Lista de productos en el carrito</caption>
+      <thead>
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Laptop Pro 15</td>
+          <td>1</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Mouse Gamer</td>
+          <td>1</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="3">Total</th>
+          <td><strong></strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section>
+    <h2>Estado de Compra</h2>
+    <label for="descuento">Descuento aplicado</label>
+    <meter id="descuento" value="75" min="0" max="100">75%</meter>
+    <br>
+    <label for="progreso">Progreso del pedido</label>
+    <progress id="progreso" value="3" max="10">3 de 10</progress>
+  </section>
+</main>
+<footer>
+  <address>TechStore Online, Avenida Tecnologia 123, La Paz, Bolivia</address>
+  <small>&copy; 2026 TechStore Online. Todos los derechos reservados.</small>
+</footer>
+</body>
+</html>
+
+

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <title>TechStore Online - Detalle del Producto</title>
+</head>
+<body>
+<header>
+  <img src="img/logo.svg" alt="Logo de TechStore Online" width="220" height="80">
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="producto.html">Detalle</a></li>
+      <li><a href="carrito.html">Carrito</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="acerca.html">Acerca de</a></li>
+    </ul>
+  </nav>
+  <form action="productos.html" method="get" aria-label="Busqueda de productos">
+    <label for="buscar">Buscar productos</label>
+    <input type="search" id="buscar" name="buscar" placeholder="Buscar">
+    <button type="submit">Buscar</button>
+  </form>
+</header>
+<main>
+  <section>
+    <h1>Laptop Pro 15</h1>
+    <p>Producto destacado de TechStore Online.</p>
+    <picture>
+      <source media="(max-width: 600px)" srcset="img/producto-mobile.svg">
+      <source media="(min-width: 601px)" srcset="img/producto-desktop.svg">
+      <img src="img/producto-desktop.svg" alt="Galeria de Laptop Pro 15" width="640" height="360">
+    </picture>
+  </section>
+
+  <section>
+    <h2>Video del Producto</h2>
+    <video controls width="480" aria-label="Video del producto">
+      <source src="video/producto.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+  </section>
+
+  <section>
+    <h2>Audio Promocional</h2>
+    <audio controls aria-label="Audio promocional">
+      <source src="audio/promocion.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+  </section>
+
+  <section>
+    <h2>Informacion Tecnica</h2>
+    <table>
+      <caption>Caracteristicas tecnicas de Laptop Pro 15</caption>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">Caracteristica</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">RAM</th>
+          <td>16 GB</td>
+        </tr>
+        <tr>
+          <th scope="row">SSD</th>
+          <td>512 GB</td>
+        </tr>
+        <tr>
+          <th scope="row">Procesador</th>
+          <td>Intel i7</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Garantia de 1 ano.</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section>
+    <h2>Recursos Embebidos</h2>
+    <iframe src="index.html" title="Vista de pagina principal" width="400" height="220"></iframe>
+    <embed src="img/producto1.svg" type="image/svg+xml" width="300" height="180">
+    <object data="img/producto2.svg" type="image/svg+xml" width="300" height="180">Imagen de producto</object>
+    <canvas id="canvas-producto" width="200" height="100" aria-label="Canvas de ejemplo"></canvas>
+    <svg width="200" height="100" role="img" aria-label="SVG de ejemplo">
+      <rect width="200" height="100" fill="#eeeeee"></rect>
+      <text x="20" y="55">TechStore</text>
+    </svg>
+  </section>
+</main>
+<footer>
+  <address>TechStore Online, Avenida Tecnologia 123, La Paz, Bolivia</address>
+  <small>&copy; 2026 TechStore Online. Todos los derechos reservados.</small>
+</footer>
+<script>
+  const canvas = document.getElementById('canvas-producto');
+  const ctx = canvas.getContext('2d');
+  ctx.strokeRect(20, 20, 160, 60);
+  ctx.fillText('Canvas', 75, 55);
+</script>
+</body>
+</html>
+
+
