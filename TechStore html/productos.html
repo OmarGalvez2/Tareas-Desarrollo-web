@@ -1,104 +1,123 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang='es' ng-app='techStoreApp'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="./">
-  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <base href='./'>
+  <link rel='icon' href='img/logo.png' type='image/png'>
+  <link rel='stylesheet' href='estilos.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>
   <title>TechStore Online - Productos</title>
 </head>
 <body>
-<header>
-  <img src="img/logo.svg" alt="Logo de TechStore Online" width="220" height="80">
-  <nav aria-label="Menu principal">
+<header class='site-header'>
+  <a class='brand' href='index.html' aria-label='TechStore Online inicio'>
+    <img src='img/logo.png' alt='Logo de TechStore Online' width='220' height='80'>
+    <span>TechStore Online</span>
+  </a>
+  <nav aria-label='Menu principal'>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="productos.html">Productos</a></li>
-      <li><a href="producto.html">Detalle</a></li>
-      <li><a href="carrito.html">Carrito</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="acerca.html">Acerca de</a></li>
+      <li><a href='index.html'>Inicio</a></li>
+      <li><a href='productos.html'>Productos</a></li>
+      <li><a href='producto.html'>Detalle</a></li>
+      <li><a href='carrito.html'>Carrito <span id='contador-carrito'>0</span></a></li>
+      <li><a href='contacto.html'>Contacto</a></li>
+      <li><a href='acerca.html'>Acerca de</a></li>
     </ul>
   </nav>
-  <form action="productos.html" method="get" aria-label="Busqueda de productos">
-    <label for="buscar">Buscar productos</label>
-    <input type="search" id="buscar" name="buscar" placeholder="Buscar">
-    <button type="submit">Buscar</button>
+  <form class='search-form' action='productos.html' method='get' aria-label='Busqueda de productos'>
+    <label for='buscar'>Buscar</label>
+    <input type='search' id='buscar' name='buscar' placeholder='Laptop, mouse, monitor'>
+    <button type='submit'>Buscar</button>
   </form>
 </header>
-<main>
-  <h1>Productos</h1>
-  <aside>
-    <h2>Filtros</h2>
-    <form action="productos.html" method="get" aria-describedby="ayuda-filtros">
-      <p id="ayuda-filtros">Filtros simulados para practicar formularios.</p>
-      <fieldset>
-        <legend>Precio</legend>
-        <label for="precio">Precio maximo</label>
-        <input type="number" id="precio" name="precio" min="0" max="5000" step="50" placeholder="1000">
-      </fieldset>
-      <fieldset>
-        <legend>Marca</legend>
-        <label for="marca">Marca</label>
-        <input list="marcas" id="marca" name="marca" placeholder="Marca">
-        <datalist id="marcas">
-          <option value="TechPro"></option>
-          <option value="MobileX"></option>
-          <option value="GameMax"></option>
-        </datalist>
-      </fieldset>
-      <fieldset>
-        <legend>Categoria</legend>
-        <label for="categoria">Categoria</label>
-        <select id="categoria" name="categoria">
-          <option value="laptops">Laptops</option>
-          <option value="smartphones">Smartphones</option>
-          <option value="accesorios">Accesorios</option>
-          <option value="gaming">Gaming</option>
-        </select>
-      </fieldset>
-      <fieldset>
-        <legend>Color</legend>
-        <label for="color">Color preferido</label>
-        <input type="color" id="color" name="color" value="#000000">
-      </fieldset>
-      <button type="submit">Filtrar</button>
-    </form>
-  </aside>
 
-  <section>
-    <h2>Lista de Productos</h2>
-    <article>
-      <h3>Laptop Pro 15</h3>
-      <img src="img/laptop.svg" alt="Laptop Pro 15" width="320" height="180">
-      <p>Precio: <strong></strong></p>
-      <a href="producto.html">Ver detalle</a>
-    </article>
-    <article>
-      <h3>Smartphone X</h3>
-      <img src="img/smartphone.svg" alt="Smartphone X" width="320" height="180">
-      <p>Precio: <strong></strong></p>
-      <a href="producto.html">Ver detalle</a>
-    </article>
-    <article>
-      <h3>Accesorios Basicos</h3>
-      <img src="img/accesorios.svg" alt="Accesorios tecnologicos" width="320" height="180">
-      <p>Precio: <strong></strong></p>
-      <a href="producto.html">Ver detalle</a>
-    </article>
-    <article>
-      <h3>Kit Gaming</h3>
-      <img src="img/gaming.svg" alt="Kit gaming" width="320" height="180">
-      <p>Precio: <strong></strong></p>
-      <a href="producto.html">Ver detalle</a>
-    </article>
-  </section>
+<main ng-controller='ProductosController' ng-cloak>
+  <h1>Productos</h1>
+  <div class='shop-layout'>
+    <aside>
+      <h2>Filtros</h2>
+      <form id='filtros-form' ng-submit='evitarEnvio($event)' aria-describedby='ayuda-filtros'>
+        <p id='ayuda-filtros'>Filtra el catalogo por precio, marca, categoria o color.</p>
+        <fieldset>
+          <legend>Precio</legend>
+          <label for='precio'>Precio maximo</label>
+          <input type='number' id='precio' name='precio' min='0' max='5000' step='50' placeholder='1000' ng-model='filtro.precio'>
+        </fieldset>
+        <fieldset>
+          <legend>Marca</legend>
+          <label for='marca'>Marca</label>
+          <input list='marcas' id='marca' name='marca' placeholder='Marca' ng-model='filtro.marca'>
+          <datalist id='marcas'>
+            <option ng-repeat='marca in marcas' value='{{ marca }}'></option>
+          </datalist>
+        </fieldset>
+        <fieldset>
+          <legend>Categoria</legend>
+          <label for='categoria'>Categoria</label>
+          <select id='categoria' name='categoria' ng-model='filtro.categoria'>
+            <option value=''>Todas</option>
+            <option ng-repeat='categoria in categorias' value='{{ categoria }}'>{{ categoria }}</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Color</legend>
+          <label for='color'>Color preferido</label>
+          <input type='color' id='color' name='color' ng-model='filtro.color'>
+        </fieldset>
+        <button type='submit'>Filtrar</button>
+        <button type='button' ng-click='limpiarFiltros()'>Limpiar</button>
+      </form>
+    </aside>
+
+    <section>
+      <div class='catalog-toolbar'>
+        <div>
+          <h2>Catalogo</h2>
+          <p class='muted'>{{ totalFiltrado() }} productos encontrados</p>
+        </div>
+        <div>
+          <label for='busqueda-catalogo'>Buscar en catalogo</label>
+          <input type='search' id='busqueda-catalogo' ng-model='filtro.texto' placeholder='Nombre, categoria o marca'>
+        </div>
+        <div>
+          <label for='orden-catalogo'>Ordenar</label>
+          <select id='orden-catalogo' ng-model='orden'>
+            <option value='nombre'>Nombre</option>
+            <option value='precio'>Precio menor</option>
+            <option value='-precio'>Precio mayor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class='product-grid catalogo-grid'>
+        <article class='product-card' ng-repeat='producto in productosFiltrados() | orderBy:orden track by producto.nombre'>
+          <header>
+            <span class='badge'>{{ producto.categoria }}</span>
+            <h3>{{ producto.nombre }}</h3>
+          </header>
+          <img ng-src='img/{{ producto.imagen }}' alt='{{ producto.nombre }}' width='320' height='180'>
+          <p>{{ producto.descripcion }}</p>
+          <p class='price'>Precio: <strong>${{ producto.precio }}</strong></p>
+          <p>Oferta: <mark>{{ producto.oferta }}</mark></p>
+          <p>Disponibilidad: {{ producto.disponibilidad }}</p>
+          <footer>
+            <button type='button' data-comprar='{{ producto.nombre }}'>Comprar</button>
+            <a ng-href='{{ producto.pagina }}'>Ver detalle</a>
+          </footer>
+        </article>
+      </div>
+
+      <p class='empty-state' ng-if='productosFiltrados().length === 0'>No se encontraron productos con esos filtros.</p>
+    </section>
+  </div>
 </main>
-<footer>
-  <address>TechStore Online, Avenida Tecnologia 123, La Paz, Bolivia</address>
+
+<footer class='site-footer'>
+  <address>Avenida 27 de febrero, Republica Dominicana</address>
   <small>&copy; 2026 TechStore Online. Todos los derechos reservados.</small>
 </footer>
+<script src='app.js'></script>
+<script src='script.js'></script>
 </body>
 </html>
-
-

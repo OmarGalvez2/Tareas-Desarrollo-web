@@ -1,134 +1,121 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="./">
-  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <base href='./'>
+  <link rel='icon' href='img/logo.png' type='image/png'>
+  <link rel='stylesheet' href='estilos.css'>
   <title>TechStore Online - Contacto</title>
 </head>
 <body>
-<header>
-  <img src="img/logo.svg" alt="Logo de TechStore Online" width="220" height="80">
-  <nav aria-label="Menu principal">
+<header class='site-header'>
+  <a class='brand' href='index.html' aria-label='TechStore Online inicio'>
+    <img src='img/logo.png' alt='Logo de TechStore Online' width='220' height='80'>
+    <span>TechStore Online</span>
+  </a>
+  <nav aria-label='Menu principal'>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="productos.html">Productos</a></li>
-      <li><a href="producto.html">Detalle</a></li>
-      <li><a href="carrito.html">Carrito</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="acerca.html">Acerca de</a></li>
+      <li><a href='index.html'>Inicio</a></li>
+      <li><a href='productos.html'>Productos</a></li>
+      <li><a href='producto.html'>Detalle</a></li>
+      <li><a href='carrito.html'>Carrito <span id='contador-carrito'>0</span></a></li>
+      <li><a href='contacto.html'>Contacto</a></li>
+      <li><a href='acerca.html'>Acerca de</a></li>
     </ul>
   </nav>
-  <form action="productos.html" method="get" aria-label="Busqueda de productos">
-    <label for="buscar">Buscar productos</label>
-    <input type="search" id="buscar" name="buscar" placeholder="Buscar">
-    <button type="submit">Buscar</button>
+  <form class='search-form' action='productos.html' method='get' aria-label='Busqueda de productos'>
+    <label for='buscar'>Buscar</label>
+    <input type='search' id='buscar' name='buscar' placeholder='Laptop, mouse, monitor'>
+    <button type='submit'>Buscar</button>
   </form>
 </header>
 <main>
   <h1>Contacto</h1>
-  <section>
-    <h2>Formulario de Contacto</h2>
-    <form action="contacto.html" method="post" enctype="multipart/form-data" aria-describedby="ayuda-contacto" autocomplete="on">
-      <p id="ayuda-contacto">Complete los datos solicitados.</p>
+  <section class='contact-section'>
+    <h2>Formulario de contacto</h2>
+    <form id='form-contacto' action='contacto.html' method='post' enctype='multipart/form-data' aria-describedby='ayuda-contacto' autocomplete='on'>
+      <p id='ayuda-contacto'>Completa tus datos para que TechStore Online pueda responderte.</p>
 
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required placeholder="Nombre completo" autocomplete="name">
-      <br>
+      <label for='nombre'>Nombre</label>
+      <input type='text' id='nombre' name='nombre' required placeholder='Nombre completo' autocomplete='name'>
 
-      <label for="correo">Correo</label>
-      <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com" autocomplete="email">
-      <br>
+      <label for='correo'>Correo</label>
+      <input type='email' id='correo' name='correo' required placeholder='correo@ejemplo.com' autocomplete='email'>
 
-      <label for="clave">Contrasena</label>
-      <input type="password" id="clave" name="clave" required placeholder="Contrasena" minlength="6" autocomplete="new-password">
-      <br>
+      <label for='clave'>Contrasena</label>
+      <input type='password' id='clave' name='clave' required placeholder='Contrasena' minlength='6' autocomplete='new-password'>
 
-      <label for="telefono">Telefono</label>
-      <input type="tel" id="telefono" name="telefono" pattern="[0-9]{8}" placeholder="12345678" autocomplete="tel">
-      <br>
+      <label for='telefono'>Telefono</label>
+      <input type='tel' id='telefono' name='telefono' pattern='[0-9]{8}' placeholder='12345678' autocomplete='tel'>
 
-      <label for="cantidad">Cantidad</label>
-      <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1">
-      <br>
+      <label for='cantidad'>Cantidad</label>
+      <input type='number' id='cantidad' name='cantidad' min='1' max='10' step='1' value='1'>
 
-      <label for="fecha">Fecha</label>
-      <input type="date" id="fecha" name="fecha" required>
-      <br>
+      <label for='fecha'>Fecha</label>
+      <input type='date' id='fecha' name='fecha' required>
 
-      <label for="fecha-hora">Fecha y hora</label>
-      <input type="datetime-local" id="fecha-hora" name="fecha-hora">
-      <br>
+      <label for='fecha-hora'>Fecha y hora</label>
+      <input type='datetime-local' id='fecha-hora' name='fecha-hora'>
 
-      <label for="color-contacto">Color favorito</label>
-      <input type="color" id="color-contacto" name="color-contacto" value="#3366cc">
-      <br>
+      <label for='color-contacto'>Color favorito</label>
+      <input type='color' id='color-contacto' name='color-contacto' value='#12233f'>
 
-      <label for="satisfaccion">Nivel de satisfaccion</label>
-      <input type="range" id="satisfaccion" name="satisfaccion" min="0" max="10" step="1" value="5">
-      <output for="satisfaccion">5</output>
-      <br>
+      <label for='satisfaccion'>Nivel de satisfaccion</label>
+      <input type='range' id='satisfaccion' name='satisfaccion' min='0' max='10' step='1' value='5'>
+      <output for='satisfaccion'>5</output>
 
-      <label for="archivo">Archivo</label>
-      <input type="file" id="archivo" name="archivo" multiple>
-      <br>
+      <label for='archivo'>Archivo</label>
+      <input type='file' id='archivo' name='archivo' multiple>
 
-      <label for="sitio">Sitio web</label>
-      <input type="url" id="sitio" name="sitio" placeholder="https://ejemplo.com">
-      <br>
+      <label for='sitio'>Sitio web</label>
+      <input type='url' id='sitio' name='sitio' placeholder='https://ejemplo.com'>
 
-      <label for="producto-readonly">Producto</label>
-      <input type="text" id="producto-readonly" name="producto-readonly" value="Laptop Pro 15" readonly>
-      <br>
+      <label for='producto-readonly'>Producto</label>
+      <input type='text' id='producto-readonly' name='producto-readonly' value='Laptop Pro 15' readonly>
 
-      <label for="campo-disabled">Campo deshabilitado</label>
-      <input type="text" id="campo-disabled" name="campo-disabled" value="No editable" disabled>
-      <br>
+      <label for='campo-disabled'>Campo deshabilitado</label>
+      <input type='text' id='campo-disabled' name='campo-disabled' value='No editable' disabled>
 
-      <label for="motivo">Motivo</label>
-      <select id="motivo" name="motivo" required>
-        <optgroup label="Atencion">
-          <option value="consulta">Consulta</option>
-          <option value="soporte">Soporte</option>
+      <label for='motivo'>Motivo</label>
+      <select id='motivo' name='motivo' required>
+        <optgroup label='Atencion'>
+          <option value='consulta'>Consulta</option>
+          <option value='soporte'>Soporte</option>
         </optgroup>
-        <optgroup label="Compra">
-          <option value="pedido">Pedido</option>
-          <option value="garantia">Garantia</option>
+        <optgroup label='Compra'>
+          <option value='pedido'>Pedido</option>
+          <option value='garantia'>Garantia</option>
         </optgroup>
       </select>
-      <br>
 
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" required placeholder="Escriba su mensaje"></textarea>
-      <br>
+      <label for='mensaje'>Mensaje</label>
+      <textarea id='mensaje' name='mensaje' required placeholder='Escriba su mensaje'></textarea>
 
       <fieldset>
         <legend>Preferencias</legend>
-        <input type="checkbox" id="boletin" name="boletin" value="si">
-        <label for="boletin">Recibir boletin</label>
-        <br>
-        <input type="radio" id="contacto-email" name="tipo-contacto" value="email" checked>
-        <label for="contacto-email">Contacto por email</label>
-        <br>
-        <input type="radio" id="contacto-telefono" name="tipo-contacto" value="telefono">
-        <label for="contacto-telefono">Contacto por telefono</label>
+        <input type='checkbox' id='boletin' name='boletin' value='si'>
+        <label for='boletin'>Recibir boletin</label>
+        <input type='radio' id='contacto-email' name='tipo-contacto' value='email' checked>
+        <label for='contacto-email'>Contacto por email</label>
+        <input type='radio' id='contacto-telefono' name='tipo-contacto' value='telefono'>
+        <label for='contacto-telefono'>Contacto por telefono</label>
       </fieldset>
 
-      <input type="hidden" id="origen" name="origen" value="formulario-contacto">
-      <input type="submit" value="Enviar">
-      <input type="reset" value="Limpiar">
-      <button type="button">Ayuda</button>
+      <input type='hidden' id='origen' name='origen' value='formulario-contacto'>
+      <div class='actions'>
+        <input type='submit' value='Enviar'>
+        <input type='reset' value='Limpiar'>
+        <button type='button' id='ayuda-contacto-btn'>Ayuda</button>
+      </div>
+      <p id='mensaje-formulario' role='status'></p>
     </form>
   </section>
 </main>
-<footer>
-  <address>TechStore Online, Avenida Tecnologia 123, La Paz, Bolivia</address>
+<footer class='site-footer'>
+  <address>Avenida 27 de febrero, Republica Dominicana</address>
   <small>&copy; 2026 TechStore Online. Todos los derechos reservados.</small>
 </footer>
+<script src='script.js'></script>
 </body>
 </html>
-
-
-
-

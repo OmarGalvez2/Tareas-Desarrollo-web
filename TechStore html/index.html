@@ -1,195 +1,204 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="./">
-  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <base href='./'>
+  <link rel='icon' href='img/logo.png' type='image/png'>
+  <link rel='stylesheet' href='estilos.css'>
   <title>TechStore Online - Inicio</title>
 </head>
 <body>
-<header>
-  <img src="img/logo.svg" alt="Logo de TechStore Online" width="220" height="80">
-  <nav aria-label="Menu principal">
+<header class='site-header'>
+  <a class='brand' href='index.html' aria-label='TechStore Online inicio'>
+    <img src='img/logo.png' alt='Logo de TechStore Online' width='220' height='80'>
+    <span>TechStore Online</span>
+  </a>
+  <nav aria-label='Menu principal'>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="productos.html">Productos</a></li>
-      <li><a href="producto.html">Detalle</a></li>
-      <li><a href="carrito.html">Carrito</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="acerca.html">Acerca de</a></li>
+      <li><a href='index.html'>Inicio</a></li>
+      <li><a href='productos.html'>Productos</a></li>
+      <li><a href='producto.html'>Detalle</a></li>
+      <li><a href='carrito.html'>Carrito <span id='contador-carrito'>0</span></a></li>
+      <li><a href='contacto.html'>Contacto</a></li>
+      <li><a href='acerca.html'>Acerca de</a></li>
     </ul>
   </nav>
-  <form action="productos.html" method="get" aria-label="Busqueda de productos">
-    <label for="buscar">Buscar productos</label>
-    <input type="search" id="buscar" name="buscar" placeholder="Buscar">
-    <button type="submit">Buscar</button>
+  <form class='search-form' action='productos.html' method='get' aria-label='Busqueda de productos'>
+    <label for='buscar'>Buscar</label>
+    <input type='search' id='buscar' name='buscar' placeholder='Laptop, mouse, monitor'>
+    <button type='submit'>Buscar</button>
   </form>
 </header>
 <main>
-  <section>
-    <h1>TechStore Online</h1>
-    <p>Tienda virtual de productos tecnologicos.</p>
+  <section class='hero'>
+    <div>
+      <p class='eyebrow'>Tecnologia para todos</p>
+      <h1>TechStore Online</h1>
+      <p>Compra laptops, smartphones, accesorios y productos gaming con una experiencia clara, rapida y ordenada.</p>
+      <a class='primary-link' href='productos.html'>Comprar ahora</a>
+    </div>
     <figure>
-      <img src="img/banner.png" alt="Banner promocional de productos tecnologicos" width="640" height="360">
-      <figcaption>Promocion especial en tecnologia.</figcaption>
+      <img src='img/banner.png' alt='Banner promocional de productos tecnologicos' width='640' height='360'>
+      <figcaption>Promocion especial en productos seleccionados.</figcaption>
     </figure>
-    <a href="productos.html">Comprar ahora</a>
   </section>
 
   <section>
     <h2>Categorias de Productos</h2>
-    <article>
-      <h2>Laptops</h2>
-      <p>Equipos para estudio, trabajo y entretenimiento.</p>
-    </article>
-    <article>
-      <h2>Smartphones</h2>
-      <p>Telefonos inteligentes de diferentes marcas.</p>
-    </article>
-    <article>
-      <h2>Accesorios</h2>
-      <p>Audifonos, teclados, mouse y cargadores.</p>
-    </article>
-    <article>
-      <h2>Gaming</h2>
-      <p>Productos para videojuegos y rendimiento.</p>
-    </article>
+    <div class='category-grid'>
+      <article><h3>Laptops</h3><p>Equipos para estudio, trabajo y productividad.</p><a href='productos.html'>Ver laptops</a></article>
+      <article><h3>Smartphones</h3><p>Telefonos y tablets para comunicacion diaria.</p><a href='productos.html'>Ver smartphones</a></article>
+      <article><h3>Accesorios</h3><p>Audifonos, teclados, camaras y complementos.</p><a href='productos.html'>Ver accesorios</a></article>
+      <article><h3>Gaming</h3><p>Productos para jugar y mejorar tu escritorio.</p><a href='productos.html'>Ver gaming</a></article>
+    </div>
   </section>
 
   <section>
     <h2>Productos Destacados</h2>
-    <article>
-      <header><h3>Laptop Pro 15</h3></header>
-      <img src="img/producto1.jpeg" alt="Laptop Pro 15" width="320" height="180">
-      <p>Laptop para productividad.</p>
-      <p>Precio: <strong></strong></p>
+    <div class='product-grid'>
+    <article class='product-card' data-categoria='Laptops' data-precio='999' data-marca='TechPro'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Laptop Pro 15</h3>
+      </header>
+      <img src='img/producto1.jpeg' alt='Laptop Pro 15' width='320' height='180'>
+      <p>Laptop para productividad, estudio y trabajo.</p>
+      <p class='price'>Precio: <strong>$999</strong></p>
       <p>Oferta: <mark>20% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Laptop Pro 15'>Comprar</button>
+        <a href='producto.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Smartphone X</h3></header>
-      <img src="img/producto2.jpeg" alt="Smartphone X" width="320" height="180">
-      <p>Telefono con pantalla amplia.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Smartphones' data-precio='699' data-marca='MobileX'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Smartphone X</h3>
+      </header>
+      <img src='img/producto2.jpeg' alt='Smartphone X' width='320' height='180'>
+      <p>Telefono inteligente con pantalla amplia y camara de alta calidad.</p>
+      <p class='price'>Precio: <strong>$699</strong></p>
       <p>Oferta: <mark>10% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Smartphone X'>Comprar</button>
+        <a href='producto-smartphone.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Audifonos Max</h3></header>
-      <img src="img/producto3.jpeg" alt="Audifonos Max" width="320" height="180">
-      <p>Audifonos inalambricos.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Accesorios' data-precio='129' data-marca='SoundMax'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Audifonos Max</h3>
+      </header>
+      <img src='img/producto3.jpeg' alt='Audifonos Max' width='320' height='180'>
+      <p>Audifonos inalambricos para musica, clases y llamadas.</p>
+      <p class='price'>Precio: <strong>$129</strong></p>
       <p>Oferta: <mark>15% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Audifonos Max'>Comprar</button>
+        <a href='producto-audifonos.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Teclado Mecanico</h3></header>
-      <img src="img/producto4.jpg" alt="Teclado mecanico" width="320" height="180">
-      <p>Teclado para escritura y juegos.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Accesorios' data-precio='89' data-marca='KeyTech'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Teclado Mecanico</h3>
+      </header>
+      <img src='img/producto4.jpg' alt='Teclado Mecanico' width='320' height='180'>
+      <p>Teclado mecanico para escritura, oficina y videojuegos.</p>
+      <p class='price'>Precio: <strong>$89</strong></p>
       <p>Oferta: <mark>5% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Teclado Mecanico'>Comprar</button>
+        <a href='producto-teclado.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Mouse Gamer</h3></header>
-      <img src="img/producto5.jpeg" alt="Mouse gamer" width="320" height="180">
-      <p>Mouse con sensor optico.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Gaming' data-precio='49' data-marca='GameMax'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Mouse Gamer</h3>
+      </header>
+      <img src='img/producto5.jpeg' alt='Mouse Gamer' width='320' height='180'>
+      <p>Mouse gamer con sensor optico y botones programables.</p>
+      <p class='price'>Precio: <strong>$49</strong></p>
       <p>Oferta: <mark>12% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Mouse Gamer'>Comprar</button>
+        <a href='producto-mouse.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Monitor 24</h3></header>
-      <img src="img/producto6.jpeg" alt="Monitor de 24 pulgadas" width="320" height="180">
-      <p>Monitor para oficina.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Gaming' data-precio='199' data-marca='ViewTech'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Monitor 24</h3>
+      </header>
+      <img src='img/producto6.jpeg' alt='Monitor 24' width='320' height='180'>
+      <p>Monitor de 24 pulgadas para oficina, estudio y juegos.</p>
+      <p class='price'>Precio: <strong>$199</strong></p>
       <p>Oferta: <mark>8% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Monitor 24'>Comprar</button>
+        <a href='producto-monitor.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Tablet Edu</h3></header>
-      <img src="img/producto7.jpeg" alt="Tablet Edu" width="320" height="180">
-      <p>Tablet para estudio.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Smartphones' data-precio='249' data-marca='EduTab'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Tablet Edu</h3>
+      </header>
+      <img src='img/producto7.jpeg' alt='Tablet Edu' width='320' height='180'>
+      <p>Tablet para clases, lectura y entretenimiento.</p>
+      <p class='price'>Precio: <strong>$249</strong></p>
       <p>Oferta: <mark>18% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Tablet Edu'>Comprar</button>
+        <a href='producto-tablet.html'>Ver detalle</a>
+      </footer>
     </article>
-    <article>
-      <header><h3>Camara Web HD</h3></header>
-      <img src="img/producto8.jpeg" alt="Camara web HD" width="320" height="180">
-      <p>Camara para videollamadas.</p>
-      <p>Precio: <strong></strong></p>
+    <article class='product-card' data-categoria='Accesorios' data-precio='59' data-marca='CamTech'>
+      <header>
+        <span class='badge'>Destacado</span>
+        <h3>Camara Web HD</h3>
+      </header>
+      <img src='img/producto8.jpeg' alt='Camara Web HD' width='320' height='180'>
+      <p>Camara web para clases virtuales, reuniones y videollamadas.</p>
+      <p class='price'>Precio: <strong>$59</strong></p>
       <p>Oferta: <mark>7% OFF</mark></p>
       <p>Disponibilidad: Disponible</p>
-      <footer><button type="button">Comprar</button></footer>
+      <footer>
+        <button type='button' data-comprar='Camara Web HD'>Comprar</button>
+        <a href='producto-camara.html'>Ver detalle</a>
+      </footer>
+    </article>
+    </div>
+  </section>
+
+  <section class='store-info'>
+    <article>
+      <h2>Compra sencilla</h2>
+      <p>Agrega productos al carrito, revisa el total y continua con tu pedido.</p>
+    </article>
+    <article>
+      <h2>Productos organizados</h2>
+      <p>Filtra por categoria, marca, color y precio desde la pagina de productos.</p>
+    </article>
+    <article>
+      <h2>Soporte directo</h2>
+      <p>Usa el formulario de contacto para consultas, soporte o garantia.</p>
     </article>
   </section>
-
-  <section>
-    <h2>Laboratorio HTML5</h2>
-    <p><ruby>Tech<rp>(</rp><rt>tek</rt><rp>)</rp></ruby></p>
-    <p><bdi>Usuario123</bdi> compro un producto.</p>
-    <p><bdo dir="rtl">Texto invertido</bdo></p>
-    <p>Producto con palabra larga: tecnologia<wbr>innovadora<wbr>portatil.</p>
-    <p><data value="SKU-1001">Laptop Gamer</data></p>
-  </section>
-
-  <section>
-    <h2>Etiquetas de Texto</h2>
-    <h4>Encabezado h4</h4>
-    <h5>Encabezado h5</h5>
-    <h6>Encabezado h6</h6>
-    <div>
-      <p>Bloque creado con div.</p>
-    </div>
-    <p>Texto con <span>span</span>, <strong>importante</strong>, <em>enfasis</em>, <small>nota pequena</small>, <mark>resaltado</mark>, <del>antes</del> e <ins>insertado</ins>.</p>
-    <p>Formula: H<sub>2</sub>O y 2<sup>3</sup>.</p>
-    <p>Codigo: <code>const total = precio;</code></p>
-    <pre><code>let producto = "Laptop";</code></pre>
-    <p>Atajo: <kbd>Ctrl</kbd> + <kbd>F</kbd>. Resultado: <samp>Producto encontrado</samp>. Variable: <var>precio</var>.</p>
-    <p><q>La tecnologia ayuda al aprendizaje.</q></p>
-    <p><dfn>HTML5</dfn> es una version del lenguaje HTML.</p>
-  </section>
-
-  <section>
-    <h2>Listas</h2>
-    <ul>
-      <li>Laptop</li>
-      <li>Smartphone</li>
-    </ul>
-    <ol>
-      <li>Elegir producto</li>
-      <li>Agregar al carrito</li>
-    </ol>
-    <dl>
-      <dt>RAM</dt>
-      <dd>Memoria del equipo.</dd>
-      <dt>SSD</dt>
-      <dd>Unidad de almacenamiento.</dd>
-    </dl>
-    <hr>
-    <p>Linea uno<br>Linea dos</p>
-  </section>
 </main>
-<footer>
-  <address>TechStore Online, Avenida Tecnologia 123, La Paz, Bolivia</address>
+<footer class='site-footer'>
+  <address>Avenida 27 de febrero, Republica Dominicana</address>
   <small>&copy; 2026 TechStore Online. Todos los derechos reservados.</small>
 </footer>
-<script>
-  console.log('TechStore Online');
-</script>
-<noscript>Este sitio funciona mejor con JavaScript activado.</noscript>
-<template id="plantilla-producto"><article><h2>Producto</h2></article></template>
+<script src='script.js'></script>
 </body>
 </html>
-
-
-

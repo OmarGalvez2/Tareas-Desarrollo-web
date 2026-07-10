@@ -1,0 +1,374 @@
+﻿/* CSS de las paginas internas */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f6fa; /* fondo de pagina */
+  color: #1f2937; /* texto de pagina */
+}
+
+body > header {
+  background-color: #12233f; /* fondo de header */
+  color: #ffffff; /* texto de header */
+  padding: 18px 8%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+body > header img {
+  background-color: #ffffff; /* fondo de logo */
+  padding: 6px;
+  border-radius: 6px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+nav a {
+  color: #ffffff; /* texto de menu */
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+nav a:hover,
+nav a.activo {
+  background-color: #1f3b66; /* fondo de menu */
+}
+
+body > header form {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+body > header label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  padding: 9px;
+  border: 1px solid #cbd5e1; /* borde de formularios */
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+main a {
+  background-color: #f59e0b; /* fondo de botones */
+  color: #111827; /* texto de botones */
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+main a:hover {
+  background-color: #d97706; /* fondo de botones */
+  color: #ffffff; /* texto de botones */
+}
+
+main {
+  width: 90%;
+  max-width: 1150px;
+  margin: 24px auto;
+}
+
+h1,
+h2,
+h3 {
+  color: #12233f; /* texto de titulos */
+}
+
+h1 {
+  font-size: 32px;
+  margin-top: 0;
+}
+
+section,
+aside,
+article,
+dialog[open] {
+  background-color: #ffffff; /* fondo de tarjetas */
+  border: 1px solid #d9e2ec; /* borde de tarjetas */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+article {
+  padding: 14px;
+}
+
+article:hover,
+aside:hover {
+  border-color: #f59e0b; /* borde de tarjetas */
+}
+
+article h3,
+article h2 {
+  margin-top: 0;
+}
+
+img,
+picture img,
+video,
+iframe,
+embed,
+object,
+canvas,
+svg {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+img,
+picture img {
+  height: auto;
+}
+
+video,
+audio {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+}
+
+main > aside + section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+main > aside + section > h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #d9e2ec; /* borde de formularios */
+  border-radius: 8px;
+  margin: 12px 0;
+  padding: 14px;
+}
+
+legend {
+  color: #12233f; /* texto de titulo del filtro */
+  font-weight: bold;
+}
+
+aside form label,
+section form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+aside input,
+aside select,
+section form input,
+section form select,
+section form textarea {
+  width: 100%;
+  margin-top: 5px;
+}
+
+section form br {
+  display: none;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="color"],
+input[type="range"],
+input[type="submit"],
+input[type="reset"],
+input[type="hidden"] {
+  width: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff; /* fondo de tabla */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+caption {
+  font-weight: bold;
+  color: #12233f; /* texto de titulo de tabla */
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  border: 1px solid #d9e2ec; /* borde de celdas de tabla */
+  padding: 12px;
+  text-align: left;
+}
+
+thead,
+tfoot {
+  background-color: #e8f1ff; /* fondo de parte de arriba y abajo de tabla */
+}
+
+strong {
+  color: #0f766e; /* texto de precio */
+}
+
+mark {
+  background-color: #fde68a; /* fondo de oferta */
+  color: #78350f; /* texto de oferta */
+  border-radius: 4px;
+  padding: 3px 6px;
+}
+
+meter,
+progress {
+  width: 100%;
+  max-width: 500px;
+  height: 22px;
+  display: block;
+  margin: 8px 0 16px;
+}
+
+blockquote {
+  border-left: 5px solid #f59e0b; /* borde de cita */
+  margin-left: 0;
+  padding: 10px 16px;
+  background-color: #fff7ed; /* fondo de cita */
+}
+
+details {
+  border: 1px solid #d9e2ec; /* borde de caja desplegable */
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #12233f; /* texto de titulo desplegable */
+}
+
+dialog[open] {
+  position: static;
+  display: block;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+body > footer {
+  background-color: #12233f; /* fondo de footer */
+  color: #ffffff; /* texto de footer */
+  text-align: center;
+  padding: 20px;
+}
+
+body > footer address,
+body > footer small {
+  display: block;
+  margin: 6px 0;
+}
+
+@media (max-width: 700px) {
+  body > header {
+    padding: 16px;
+  }
+
+  body > header form {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  input[type="search"] {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+}
+
+[ng-cloak] {
+  display: none !important;
+}
+
+.lista-productos,
+.catalogo-angular {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.lista-productos > h2,
+.catalogo-angular > h2,
+.catalogo-angular > p,
+.catalogo-angular > label,
+.catalogo-angular > input {
+  grid-column: 1 / -1;
+}
+
+.lista-productos article,
+.catalogo-angular article {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lista-productos article a,
+.catalogo-angular article a {
+  margin-top: auto;
+  text-align: center;
+}
+
+picture img {
+  display: block;
+  max-height: 420px;
+  object-fit: contain;
+  background-color: #ffffff; /* fondo de imagenes */
+}
+

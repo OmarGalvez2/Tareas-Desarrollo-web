@@ -1,29 +1,33 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="./">
-  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <base href='./'>
+  <link rel='icon' href='img/logo.png' type='image/png'>
+  <link rel='stylesheet' href='estilos.css'>
   <title>TechStore Online - Acerca de</title>
 </head>
 <body>
-<header>
-  <img src="img/logo.svg" alt="Logo de TechStore Online" width="220" height="80">
-  <nav aria-label="Menu principal">
+<header class='site-header'>
+  <a class='brand' href='index.html' aria-label='TechStore Online inicio'>
+    <img src='img/logo.png' alt='Logo de TechStore Online' width='220' height='80'>
+    <span>TechStore Online</span>
+  </a>
+  <nav aria-label='Menu principal'>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="productos.html">Productos</a></li>
-      <li><a href="producto.html">Detalle</a></li>
-      <li><a href="carrito.html">Carrito</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="acerca.html">Acerca de</a></li>
+      <li><a href='index.html'>Inicio</a></li>
+      <li><a href='productos.html'>Productos</a></li>
+      <li><a href='producto.html'>Detalle</a></li>
+      <li><a href='carrito.html'>Carrito <span id='contador-carrito'>0</span></a></li>
+      <li><a href='contacto.html'>Contacto</a></li>
+      <li><a href='acerca.html'>Acerca de</a></li>
     </ul>
   </nav>
-  <form action="productos.html" method="get" aria-label="Busqueda de productos">
-    <label for="buscar">Buscar productos</label>
-    <input type="search" id="buscar" name="buscar" placeholder="Buscar">
-    <button type="submit">Buscar</button>
+  <form class='search-form' action='productos.html' method='get' aria-label='Busqueda de productos'>
+    <label for='buscar'>Buscar</label>
+    <input type='search' id='buscar' name='buscar' placeholder='Laptop, mouse, monitor'>
+    <button type='submit'>Buscar</button>
   </form>
 </header>
 <main>
@@ -31,43 +35,38 @@
     <h1>Acerca de TechStore Online</h1>
     <article>
       <h2>Nuestra tienda</h2>
-      <p>TechStore Online es una practica educativa para aprender <abbr title="HyperText Markup Language">HTML</abbr>5.</p>
-      <p>Creada el <time datetime="2026-06-16">16 de junio de 2026</time>.</p>
+      <p>TechStore Online es una tienda virtual de productos tecnologicos basada en la integridad y fue hecha con <abbr title='HyperText Markup Language'>HTML</abbr>5, CSS, JavaScript y AngularJS.</p>
+      <p>Proyecto actualizado el <time datetime='2026-07-02'>9 de julio de 2026</time>.</p>
       <blockquote>
-        <p>La tecnologia es mejor cuando ayuda a las personas.</p>
+        <p>La tecnologia se entiende mejor cuando se organiza de forma clara.</p>
         <cite>Equipo TechStore</cite>
       </blockquote>
       <details>
         <summary>Mision</summary>
-        <p>Ofrecer una estructura basica para practicar etiquetas HTML5.</p>
+        <p>Presentar productos tecnologicos en una experiencia ordenada, accesible y funcional.</p>
       </details>
       <address>
-        Contacto: <a href="mailto:info@techstore.test">info@techstore.test</a><br>
-        Avenida Tecnologia 123, La Paz, Bolivia
+        Contacto: <a href='mailto:info@techstore.test'>info@techstore.test</a><br>
+        Avenida 27 de febrero, Republica Dominicana
       </address>
     </article>
   </section>
-
   <section>
-    <h2>Preguntas</h2>
-    <article>
-      <h3>Que se aprende?</h3>
-      <p>Se aprende estructura semantica, formularios, tablas, listas y multimedia.</p>
-    </article>
+    <h2>Aviso</h2>
+    <button type='button' id='abrir-dialogo'>Ver aviso</button>
+    <dialog id='aviso-dialogo' aria-labelledby='aviso-titulo'>
+      <h3 id='aviso-titulo'>TechStore Online</h3>
+      <p>Hola!!, Aqui no hay ningun aviso :D.</p>
+      <form method='dialog'>
+        <button>Cerrar</button>
+      </form>
+    </dialog>
   </section>
-
-  <dialog open>
-    <p>Mensaje informativo de ejemplo.</p>
-    <form method="dialog">
-      <button>Cerrar</button>
-    </form>
-  </dialog>
 </main>
-<footer>
-  <address>TechStore Online, Avenida Tecnologia 123, La Paz, Bolivia</address>
+<footer class='site-footer'>
+  <address>TechStore Online, Avenida 27 de febrero, Republica Dominicana</address>
   <small>&copy; 2026 TechStore Online. Todos los derechos reservados.</small>
 </footer>
+<script src='script.js'></script>
 </body>
 </html>
-
-
