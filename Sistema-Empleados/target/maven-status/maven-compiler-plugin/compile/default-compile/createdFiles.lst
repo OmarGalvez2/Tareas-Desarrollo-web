@@ -1,0 +1,4 @@
+com\ejemplo\empleados\SistemaEmpleadosApplication.class
+com\ejemplo\empleados\controller\EmpleadoController.class
+com\ejemplo\empleados\model\Empleado.class
+com\ejemplo\empleados\repository\EmpleadoRepository.class
